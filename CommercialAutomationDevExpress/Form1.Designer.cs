@@ -78,7 +78,7 @@ namespace CommercialAutomationDevExpress
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
-            this.ribbonControl1.Size = new System.Drawing.Size(1162, 171);
+            this.ribbonControl1.Size = new System.Drawing.Size(1164, 174);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnAnasayfa
@@ -281,6 +281,8 @@ namespace CommercialAutomationDevExpress
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.xtraTabbedMdiManager1.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // Form1
@@ -288,17 +290,21 @@ namespace CommercialAutomationDevExpress
             this.ActiveGlowColor = System.Drawing.Color.Transparent;
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.Appearance.ForeColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 733);
+            this.ClientSize = new System.Drawing.Size(1164, 730);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Form1.IconOptions.SvgImage")));
-            this.IconOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette;
+            this.IconOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Commercial Automation";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();

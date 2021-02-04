@@ -30,106 +30,77 @@ namespace CommercialAutomationDevExpress
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMusteriler));
-            this.sbtnUrunSil = new DevExpress.XtraEditors.SimpleButton();
-            this.sbtnUrunGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.sbtnUrunKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.textEditUrunAciklama = new System.Windows.Forms.RichTextBox();
-            this.labelUrunAciklama = new DevExpress.XtraEditors.LabelControl();
-            this.textEditUrunSatisFiyat = new DevExpress.XtraEditors.TextEdit();
-            this.labelUrunSatisFiyat = new DevExpress.XtraEditors.LabelControl();
+            this.sbtnMusteriSil = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnMusteriGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnMusteriKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.labelMusteriIl = new DevExpress.XtraEditors.LabelControl();
             this.textEditUrunAlisFiyat = new DevExpress.XtraEditors.TextEdit();
             this.labelMusteriVergiDairesi = new DevExpress.XtraEditors.LabelControl();
             this.labelMusteriMail = new DevExpress.XtraEditors.LabelControl();
-            this.textEditUrunYil = new DevExpress.XtraEditors.TextEdit();
             this.labelUrunYil = new DevExpress.XtraEditors.LabelControl();
-            this.textEditUrunModel = new DevExpress.XtraEditors.TextEdit();
             this.labelMusteriTelNo = new DevExpress.XtraEditors.LabelControl();
             this.textEditUrunMarka = new DevExpress.XtraEditors.TextEdit();
             this.labelMusteriSoyad = new DevExpress.XtraEditors.LabelControl();
             this.textEditUrunAd = new DevExpress.XtraEditors.TextEdit();
             this.labelMusteriAd = new DevExpress.XtraEditors.LabelControl();
-            this.textEditUrunID = new DevExpress.XtraEditors.TextEdit();
             this.labelMusteriTC = new DevExpress.XtraEditors.LabelControl();
-            this.groupControlUrun = new DevExpress.XtraEditors.GroupControl();
+            this.groupControlMusteri = new DevExpress.XtraEditors.GroupControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunSatisFiyat.Properties)).BeginInit();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.labelMusteriIlce = new DevExpress.XtraEditors.LabelControl();
+            this.labelMusteriAdres = new DevExpress.XtraEditors.LabelControl();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunAlisFiyat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunYil.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunModel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunMarka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunAd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlUrun)).BeginInit();
-            this.groupControlUrun.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlMusteri)).BeginInit();
+            this.groupControlMusteri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // sbtnUrunSil
+            // sbtnMusteriSil
             // 
-            this.sbtnUrunSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunSil.ImageOptions.Image")));
-            this.sbtnUrunSil.Location = new System.Drawing.Point(109, 435);
-            this.sbtnUrunSil.Name = "sbtnUrunSil";
-            this.sbtnUrunSil.Size = new System.Drawing.Size(174, 38);
-            this.sbtnUrunSil.TabIndex = 21;
-            this.sbtnUrunSil.Text = "Sil";
+            this.sbtnMusteriSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunSil.ImageOptions.Image")));
+            this.sbtnMusteriSil.Location = new System.Drawing.Point(109, 454);
+            this.sbtnMusteriSil.Name = "sbtnMusteriSil";
+            this.sbtnMusteriSil.Size = new System.Drawing.Size(174, 38);
+            this.sbtnMusteriSil.TabIndex = 21;
+            this.sbtnMusteriSil.Text = "Sil";
             // 
-            // sbtnUrunGuncelle
+            // sbtnMusteriGuncelle
             // 
-            this.sbtnUrunGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunGuncelle.ImageOptions.Image")));
-            this.sbtnUrunGuncelle.Location = new System.Drawing.Point(109, 479);
-            this.sbtnUrunGuncelle.Name = "sbtnUrunGuncelle";
-            this.sbtnUrunGuncelle.Size = new System.Drawing.Size(174, 38);
-            this.sbtnUrunGuncelle.TabIndex = 20;
-            this.sbtnUrunGuncelle.Text = "Güncelle";
+            this.sbtnMusteriGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunGuncelle.ImageOptions.Image")));
+            this.sbtnMusteriGuncelle.Location = new System.Drawing.Point(108, 498);
+            this.sbtnMusteriGuncelle.Name = "sbtnMusteriGuncelle";
+            this.sbtnMusteriGuncelle.Size = new System.Drawing.Size(174, 38);
+            this.sbtnMusteriGuncelle.TabIndex = 20;
+            this.sbtnMusteriGuncelle.Text = "Güncelle";
             // 
-            // sbtnUrunKaydet
+            // sbtnMusteriKaydet
             // 
-            this.sbtnUrunKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunKaydet.ImageOptions.Image")));
-            this.sbtnUrunKaydet.Location = new System.Drawing.Point(109, 391);
-            this.sbtnUrunKaydet.Name = "sbtnUrunKaydet";
-            this.sbtnUrunKaydet.Size = new System.Drawing.Size(174, 38);
-            this.sbtnUrunKaydet.TabIndex = 19;
-            this.sbtnUrunKaydet.Text = "Kaydet";
+            this.sbtnMusteriKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunKaydet.ImageOptions.Image")));
+            this.sbtnMusteriKaydet.Location = new System.Drawing.Point(109, 410);
+            this.sbtnMusteriKaydet.Name = "sbtnMusteriKaydet";
+            this.sbtnMusteriKaydet.Size = new System.Drawing.Size(174, 38);
+            this.sbtnMusteriKaydet.TabIndex = 19;
+            this.sbtnMusteriKaydet.Text = "Kaydet";
             // 
-            // textEditUrunAciklama
+            // labelMusteriIl
             // 
-            this.textEditUrunAciklama.Location = new System.Drawing.Point(108, 291);
-            this.textEditUrunAciklama.Name = "textEditUrunAciklama";
-            this.textEditUrunAciklama.Size = new System.Drawing.Size(175, 94);
-            this.textEditUrunAciklama.TabIndex = 18;
-            this.textEditUrunAciklama.Text = "";
-            // 
-            // labelUrunAciklama
-            // 
-            this.labelUrunAciklama.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.labelUrunAciklama.Appearance.Options.UseFont = true;
-            this.labelUrunAciklama.Location = new System.Drawing.Point(45, 291);
-            this.labelUrunAciklama.Name = "labelUrunAciklama";
-            this.labelUrunAciklama.Size = new System.Drawing.Size(57, 17);
-            this.labelUrunAciklama.TabIndex = 17;
-            this.labelUrunAciklama.Text = "Açıklama:";
-            // 
-            // textEditUrunSatisFiyat
-            // 
-            this.textEditUrunSatisFiyat.Location = new System.Drawing.Point(108, 252);
-            this.textEditUrunSatisFiyat.Name = "textEditUrunSatisFiyat";
-            this.textEditUrunSatisFiyat.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.textEditUrunSatisFiyat.Properties.Appearance.Options.UseFont = true;
-            this.textEditUrunSatisFiyat.Size = new System.Drawing.Size(175, 24);
-            this.textEditUrunSatisFiyat.TabIndex = 15;
-            // 
-            // labelUrunSatisFiyat
-            // 
-            this.labelUrunSatisFiyat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.labelUrunSatisFiyat.Appearance.Options.UseFont = true;
-            this.labelUrunSatisFiyat.Location = new System.Drawing.Point(30, 255);
-            this.labelUrunSatisFiyat.Name = "labelUrunSatisFiyat";
-            this.labelUrunSatisFiyat.Size = new System.Drawing.Size(72, 17);
-            this.labelUrunSatisFiyat.TabIndex = 14;
-            this.labelUrunSatisFiyat.Text = " Satış Fiyatı:";
+            this.labelMusteriIl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
+            this.labelMusteriIl.Appearance.Options.UseFont = true;
+            this.labelMusteriIl.Location = new System.Drawing.Point(82, 255);
+            this.labelMusteriIl.Name = "labelMusteriIl";
+            this.labelMusteriIl.Size = new System.Drawing.Size(11, 17);
+            this.labelMusteriIl.TabIndex = 14;
+            this.labelMusteriIl.Text = "İl:";
             // 
             // textEditUrunAlisFiyat
             // 
@@ -144,7 +115,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelMusteriVergiDairesi.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriVergiDairesi.Appearance.Options.UseFont = true;
-            this.labelMusteriVergiDairesi.Location = new System.Drawing.Point(19, 227);
+            this.labelMusteriVergiDairesi.Location = new System.Drawing.Point(15, 227);
             this.labelMusteriVergiDairesi.Name = "labelMusteriVergiDairesi";
             this.labelMusteriVergiDairesi.Size = new System.Drawing.Size(78, 17);
             this.labelMusteriVergiDairesi.TabIndex = 12;
@@ -154,45 +125,27 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelMusteriMail.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriMail.Appearance.Options.UseFont = true;
-            this.labelMusteriMail.Location = new System.Drawing.Point(71, 198);
+            this.labelMusteriMail.Location = new System.Drawing.Point(67, 198);
             this.labelMusteriMail.Name = "labelMusteriMail";
             this.labelMusteriMail.Size = new System.Drawing.Size(26, 17);
             this.labelMusteriMail.TabIndex = 10;
             this.labelMusteriMail.Text = "Mail:";
             // 
-            // textEditUrunYil
-            // 
-            this.textEditUrunYil.Location = new System.Drawing.Point(108, 168);
-            this.textEditUrunYil.Name = "textEditUrunYil";
-            this.textEditUrunYil.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.textEditUrunYil.Properties.Appearance.Options.UseFont = true;
-            this.textEditUrunYil.Size = new System.Drawing.Size(175, 24);
-            this.textEditUrunYil.TabIndex = 9;
-            // 
             // labelUrunYil
             // 
             this.labelUrunYil.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunYil.Appearance.Options.UseFont = true;
-            this.labelUrunYil.Location = new System.Drawing.Point(74, 171);
+            this.labelUrunYil.Location = new System.Drawing.Point(70, 171);
             this.labelUrunYil.Name = "labelUrunYil";
             this.labelUrunYil.Size = new System.Drawing.Size(21, 17);
             this.labelUrunYil.TabIndex = 8;
             this.labelUrunYil.Text = " Yıl:";
             // 
-            // textEditUrunModel
-            // 
-            this.textEditUrunModel.Location = new System.Drawing.Point(108, 140);
-            this.textEditUrunModel.Name = "textEditUrunModel";
-            this.textEditUrunModel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.textEditUrunModel.Properties.Appearance.Options.UseFont = true;
-            this.textEditUrunModel.Size = new System.Drawing.Size(175, 24);
-            this.textEditUrunModel.TabIndex = 7;
-            // 
             // labelMusteriTelNo
             // 
             this.labelMusteriTelNo.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriTelNo.Appearance.Options.UseFont = true;
-            this.labelMusteriTelNo.Location = new System.Drawing.Point(46, 142);
+            this.labelMusteriTelNo.Location = new System.Drawing.Point(42, 142);
             this.labelMusteriTelNo.Name = "labelMusteriTelNo";
             this.labelMusteriTelNo.Size = new System.Drawing.Size(49, 17);
             this.labelMusteriTelNo.TabIndex = 6;
@@ -212,7 +165,7 @@ namespace CommercialAutomationDevExpress
             this.labelMusteriSoyad.AccessibleDescription = "";
             this.labelMusteriSoyad.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriSoyad.Appearance.Options.UseFont = true;
-            this.labelMusteriSoyad.Location = new System.Drawing.Point(53, 115);
+            this.labelMusteriSoyad.Location = new System.Drawing.Point(49, 115);
             this.labelMusteriSoyad.Name = "labelMusteriSoyad";
             this.labelMusteriSoyad.Size = new System.Drawing.Size(44, 17);
             this.labelMusteriSoyad.TabIndex = 4;
@@ -231,58 +184,61 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelMusteriAd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriAd.Appearance.Options.UseFont = true;
-            this.labelMusteriAd.Location = new System.Drawing.Point(76, 87);
+            this.labelMusteriAd.Location = new System.Drawing.Point(72, 87);
             this.labelMusteriAd.Name = "labelMusteriAd";
             this.labelMusteriAd.Size = new System.Drawing.Size(21, 17);
             this.labelMusteriAd.TabIndex = 2;
             this.labelMusteriAd.Text = "Ad:";
             // 
-            // textEditUrunID
-            // 
-            this.textEditUrunID.Location = new System.Drawing.Point(108, 56);
-            this.textEditUrunID.Name = "textEditUrunID";
-            this.textEditUrunID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.textEditUrunID.Properties.Appearance.Options.UseFont = true;
-            this.textEditUrunID.Size = new System.Drawing.Size(175, 24);
-            this.textEditUrunID.TabIndex = 1;
-            // 
             // labelMusteriTC
             // 
             this.labelMusteriTC.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelMusteriTC.Appearance.Options.UseFont = true;
-            this.labelMusteriTC.Location = new System.Drawing.Point(75, 59);
+            this.labelMusteriTC.Location = new System.Drawing.Point(71, 59);
             this.labelMusteriTC.Name = "labelMusteriTC";
             this.labelMusteriTC.Size = new System.Drawing.Size(22, 17);
             this.labelMusteriTC.TabIndex = 0;
             this.labelMusteriTC.Text = "TC:";
             // 
-            // groupControlUrun
+            // groupControlMusteri
             // 
-            this.groupControlUrun.Controls.Add(this.maskedTextBox1);
-            this.groupControlUrun.Controls.Add(this.sbtnUrunSil);
-            this.groupControlUrun.Controls.Add(this.sbtnUrunGuncelle);
-            this.groupControlUrun.Controls.Add(this.sbtnUrunKaydet);
-            this.groupControlUrun.Controls.Add(this.textEditUrunAciklama);
-            this.groupControlUrun.Controls.Add(this.labelUrunAciklama);
-            this.groupControlUrun.Controls.Add(this.textEditUrunSatisFiyat);
-            this.groupControlUrun.Controls.Add(this.labelUrunSatisFiyat);
-            this.groupControlUrun.Controls.Add(this.textEditUrunAlisFiyat);
-            this.groupControlUrun.Controls.Add(this.labelMusteriVergiDairesi);
-            this.groupControlUrun.Controls.Add(this.labelMusteriMail);
-            this.groupControlUrun.Controls.Add(this.textEditUrunYil);
-            this.groupControlUrun.Controls.Add(this.labelUrunYil);
-            this.groupControlUrun.Controls.Add(this.textEditUrunModel);
-            this.groupControlUrun.Controls.Add(this.labelMusteriTelNo);
-            this.groupControlUrun.Controls.Add(this.textEditUrunMarka);
-            this.groupControlUrun.Controls.Add(this.labelMusteriSoyad);
-            this.groupControlUrun.Controls.Add(this.textEditUrunAd);
-            this.groupControlUrun.Controls.Add(this.labelMusteriAd);
-            this.groupControlUrun.Controls.Add(this.textEditUrunID);
-            this.groupControlUrun.Controls.Add(this.labelMusteriTC);
-            this.groupControlUrun.Location = new System.Drawing.Point(984, -29);
-            this.groupControlUrun.Name = "groupControlUrun";
-            this.groupControlUrun.Size = new System.Drawing.Size(334, 557);
-            this.groupControlUrun.TabIndex = 4;
+            this.groupControlMusteri.Controls.Add(this.richTextBox1);
+            this.groupControlMusteri.Controls.Add(this.maskedTextBox4);
+            this.groupControlMusteri.Controls.Add(this.maskedTextBox3);
+            this.groupControlMusteri.Controls.Add(this.maskedTextBox2);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriAdres);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriIlce);
+            this.groupControlMusteri.Controls.Add(this.comboBox2);
+            this.groupControlMusteri.Controls.Add(this.comboBox1);
+            this.groupControlMusteri.Controls.Add(this.maskedTextBox1);
+            this.groupControlMusteri.Controls.Add(this.sbtnMusteriSil);
+            this.groupControlMusteri.Controls.Add(this.sbtnMusteriGuncelle);
+            this.groupControlMusteri.Controls.Add(this.sbtnMusteriKaydet);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriIl);
+            this.groupControlMusteri.Controls.Add(this.textEditUrunAlisFiyat);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriVergiDairesi);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriMail);
+            this.groupControlMusteri.Controls.Add(this.labelUrunYil);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriTelNo);
+            this.groupControlMusteri.Controls.Add(this.textEditUrunMarka);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriSoyad);
+            this.groupControlMusteri.Controls.Add(this.textEditUrunAd);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriAd);
+            this.groupControlMusteri.Controls.Add(this.labelMusteriTC);
+            this.groupControlMusteri.Location = new System.Drawing.Point(984, -34);
+            this.groupControlMusteri.Name = "groupControlMusteri";
+            this.groupControlMusteri.Size = new System.Drawing.Size(334, 557);
+            this.groupControlMusteri.TabIndex = 4;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(109, 253);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(174, 24);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.ValueMemberChanged += new System.EventHandler(this.comboBox1_ValueMemberChanged);
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // maskedTextBox1
             // 
@@ -308,25 +264,84 @@ namespace CommercialAutomationDevExpress
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(109, 283);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(174, 24);
+            this.comboBox2.TabIndex = 24;
+            // 
+            // labelMusteriIlce
+            // 
+            this.labelMusteriIlce.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
+            this.labelMusteriIlce.Appearance.Options.UseFont = true;
+            this.labelMusteriIlce.Location = new System.Drawing.Point(68, 290);
+            this.labelMusteriIlce.Name = "labelMusteriIlce";
+            this.labelMusteriIlce.Size = new System.Drawing.Size(25, 17);
+            this.labelMusteriIlce.TabIndex = 25;
+            this.labelMusteriIlce.Text = "İlçe:";
+            // 
+            // labelMusteriAdres
+            // 
+            this.labelMusteriAdres.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
+            this.labelMusteriAdres.Appearance.Options.UseFont = true;
+            this.labelMusteriAdres.Location = new System.Drawing.Point(54, 323);
+            this.labelMusteriAdres.Name = "labelMusteriAdres";
+            this.labelMusteriAdres.Size = new System.Drawing.Size(39, 17);
+            this.labelMusteriAdres.TabIndex = 26;
+            this.labelMusteriAdres.Text = "Adres:";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(108, 57);
+            this.maskedTextBox2.Mask = "00000000000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(174, 23);
+            this.maskedTextBox2.TabIndex = 27;
+            this.maskedTextBox2.ValidatingType = typeof(int);
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(109, 169);
+            this.maskedTextBox3.Mask = "0000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(174, 23);
+            this.maskedTextBox3.TabIndex = 28;
+            this.maskedTextBox3.ValidatingType = typeof(int);
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(109, 142);
+            this.maskedTextBox4.Mask = "(999) 000-0000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(174, 23);
+            this.maskedTextBox4.TabIndex = 29;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(109, 323);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(174, 63);
+            this.richTextBox1.TabIndex = 30;
+            this.richTextBox1.Text = "";
+            // 
             // frmMusteriler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 525);
-            this.Controls.Add(this.groupControlUrun);
+            this.Controls.Add(this.groupControlMusteri);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmMusteriler";
             this.Text = "frmMusteriler";
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunSatisFiyat.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.frmMusteriler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunAlisFiyat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunYil.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunModel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunMarka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUrunAd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUrunID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlUrun)).EndInit();
-            this.groupControlUrun.ResumeLayout(false);
-            this.groupControlUrun.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlMusteri)).EndInit();
+            this.groupControlMusteri.ResumeLayout(false);
+            this.groupControlMusteri.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -335,29 +350,31 @@ namespace CommercialAutomationDevExpress
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton sbtnUrunSil;
-        private DevExpress.XtraEditors.SimpleButton sbtnUrunGuncelle;
-        private DevExpress.XtraEditors.SimpleButton sbtnUrunKaydet;
-        private System.Windows.Forms.RichTextBox textEditUrunAciklama;
-        private DevExpress.XtraEditors.LabelControl labelUrunAciklama;
-        private DevExpress.XtraEditors.TextEdit textEditUrunSatisFiyat;
-        private DevExpress.XtraEditors.LabelControl labelUrunSatisFiyat;
+        private DevExpress.XtraEditors.SimpleButton sbtnMusteriSil;
+        private DevExpress.XtraEditors.SimpleButton sbtnMusteriGuncelle;
+        private DevExpress.XtraEditors.SimpleButton sbtnMusteriKaydet;
+        private DevExpress.XtraEditors.LabelControl labelMusteriIl;
         private DevExpress.XtraEditors.TextEdit textEditUrunAlisFiyat;
         private DevExpress.XtraEditors.LabelControl labelMusteriVergiDairesi;
         private DevExpress.XtraEditors.LabelControl labelMusteriMail;
-        private DevExpress.XtraEditors.TextEdit textEditUrunYil;
         private DevExpress.XtraEditors.LabelControl labelUrunYil;
-        private DevExpress.XtraEditors.TextEdit textEditUrunModel;
         private DevExpress.XtraEditors.LabelControl labelMusteriTelNo;
         private DevExpress.XtraEditors.TextEdit textEditUrunMarka;
         private DevExpress.XtraEditors.LabelControl labelMusteriSoyad;
         private DevExpress.XtraEditors.TextEdit textEditUrunAd;
         private DevExpress.XtraEditors.LabelControl labelMusteriAd;
-        private DevExpress.XtraEditors.TextEdit textEditUrunID;
         private DevExpress.XtraEditors.LabelControl labelMusteriTC;
-        private DevExpress.XtraEditors.GroupControl groupControlUrun;
+        private DevExpress.XtraEditors.GroupControl groupControlMusteri;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private DevExpress.XtraEditors.LabelControl labelMusteriIlce;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private DevExpress.XtraEditors.LabelControl labelMusteriAdres;
     }
 }
