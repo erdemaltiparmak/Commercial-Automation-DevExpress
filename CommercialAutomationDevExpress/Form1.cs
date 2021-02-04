@@ -17,25 +17,32 @@ namespace CommercialAutomationDevExpress
         {
             InitializeComponent();
         }
-        frmUrunler f;
 
 
-        public void formShow(Form _frm, frmUrunler _isdis)
-        {
+        public void formShow(Form _frm, bool _isdis)
+        { 
 
-            if (!_isdis.isDis || _frm.IsDisposed)
+            if (!_isdis || _frm.IsDisposed)
             {
                 _frm.MdiParent = this;
                 _frm.Show();
-                _isdis.isDis = true;
+                _isdis = true;
             }
 
         }
+        frmUrunler f;
 
         private void btnUrunler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f = new frmUrunler();
-                formShow(f, f);
+            
+            if( f==null || f.IsDisposed)
+            {            
+                f = new frmUrunler();
+
+                f.MdiParent = this;
+                f.Show();
+
+            }
 
         }
 
@@ -83,8 +90,13 @@ namespace CommercialAutomationDevExpress
 
         private void btnMusteriler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show(f.isDis.ToString());
+            MessageBox.Show(f.ToString());
            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

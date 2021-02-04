@@ -33,6 +33,8 @@ namespace CommercialAutomationDevExpress
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControlUrun = new DevExpress.XtraEditors.GroupControl();
+            this.sbtnUrunSil = new DevExpress.XtraEditors.SimpleButton();
+            this.sbtnUrunGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.sbtnUrunKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.textEditUrunAciklama = new System.Windows.Forms.RichTextBox();
             this.labelUrunAciklama = new DevExpress.XtraEditors.LabelControl();
@@ -71,18 +73,23 @@ namespace CommercialAutomationDevExpress
             this.gridControl1.Location = new System.Drawing.Point(-3, -2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(808, 526);
+            this.gridControl1.Size = new System.Drawing.Size(989, 526);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControlUrun
             // 
+            this.groupControlUrun.Controls.Add(this.sbtnUrunSil);
+            this.groupControlUrun.Controls.Add(this.sbtnUrunGuncelle);
             this.groupControlUrun.Controls.Add(this.sbtnUrunKaydet);
             this.groupControlUrun.Controls.Add(this.textEditUrunAciklama);
             this.groupControlUrun.Controls.Add(this.labelUrunAciklama);
@@ -102,24 +109,44 @@ namespace CommercialAutomationDevExpress
             this.groupControlUrun.Controls.Add(this.labelUrunAd);
             this.groupControlUrun.Controls.Add(this.textEditUrunID);
             this.groupControlUrun.Controls.Add(this.labelUrunID);
-            this.groupControlUrun.Location = new System.Drawing.Point(803, -2);
+            this.groupControlUrun.Location = new System.Drawing.Point(983, -33);
             this.groupControlUrun.Name = "groupControlUrun";
-            this.groupControlUrun.Size = new System.Drawing.Size(313, 526);
-            this.groupControlUrun.TabIndex = 1;
-            this.groupControlUrun.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            this.groupControlUrun.Size = new System.Drawing.Size(334, 557);
+            this.groupControlUrun.TabIndex = 2;
+            // 
+            // sbtnUrunSil
+            // 
+            this.sbtnUrunSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunSil.ImageOptions.Image")));
+            this.sbtnUrunSil.Location = new System.Drawing.Point(109, 435);
+            this.sbtnUrunSil.Name = "sbtnUrunSil";
+            this.sbtnUrunSil.Size = new System.Drawing.Size(174, 38);
+            this.sbtnUrunSil.TabIndex = 21;
+            this.sbtnUrunSil.Text = "Sil";
+            this.sbtnUrunSil.Click += new System.EventHandler(this.sbtnUrunSil_Click);
+            // 
+            // sbtnUrunGuncelle
+            // 
+            this.sbtnUrunGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunGuncelle.ImageOptions.Image")));
+            this.sbtnUrunGuncelle.Location = new System.Drawing.Point(109, 479);
+            this.sbtnUrunGuncelle.Name = "sbtnUrunGuncelle";
+            this.sbtnUrunGuncelle.Size = new System.Drawing.Size(174, 38);
+            this.sbtnUrunGuncelle.TabIndex = 20;
+            this.sbtnUrunGuncelle.Text = "Güncelle";
+            this.sbtnUrunGuncelle.Click += new System.EventHandler(this.sbtnUrunGuncelle_Click);
             // 
             // sbtnUrunKaydet
             // 
             this.sbtnUrunKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtnUrunKaydet.ImageOptions.Image")));
-            this.sbtnUrunKaydet.Location = new System.Drawing.Point(142, 421);
+            this.sbtnUrunKaydet.Location = new System.Drawing.Point(109, 391);
             this.sbtnUrunKaydet.Name = "sbtnUrunKaydet";
-            this.sbtnUrunKaydet.Size = new System.Drawing.Size(100, 38);
+            this.sbtnUrunKaydet.Size = new System.Drawing.Size(174, 38);
             this.sbtnUrunKaydet.TabIndex = 19;
             this.sbtnUrunKaydet.Text = "Kaydet";
+            this.sbtnUrunKaydet.Click += new System.EventHandler(this.sbtnUrunKaydet_Click);
             // 
             // textEditUrunAciklama
             // 
-            this.textEditUrunAciklama.Location = new System.Drawing.Point(108, 309);
+            this.textEditUrunAciklama.Location = new System.Drawing.Point(108, 291);
             this.textEditUrunAciklama.Name = "textEditUrunAciklama";
             this.textEditUrunAciklama.Size = new System.Drawing.Size(175, 94);
             this.textEditUrunAciklama.TabIndex = 18;
@@ -129,7 +156,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunAciklama.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunAciklama.Appearance.Options.UseFont = true;
-            this.labelUrunAciklama.Location = new System.Drawing.Point(45, 309);
+            this.labelUrunAciklama.Location = new System.Drawing.Point(45, 291);
             this.labelUrunAciklama.Name = "labelUrunAciklama";
             this.labelUrunAciklama.Size = new System.Drawing.Size(57, 17);
             this.labelUrunAciklama.TabIndex = 17;
@@ -138,14 +165,14 @@ namespace CommercialAutomationDevExpress
             // textEditUrunAdet
             // 
             this.textEditUrunAdet.Font = new System.Drawing.Font("Tahoma", 8.1F);
-            this.textEditUrunAdet.Location = new System.Drawing.Point(109, 215);
+            this.textEditUrunAdet.Location = new System.Drawing.Point(109, 197);
             this.textEditUrunAdet.Name = "textEditUrunAdet";
             this.textEditUrunAdet.Size = new System.Drawing.Size(174, 24);
             this.textEditUrunAdet.TabIndex = 16;
             // 
             // textEditUrunSatisFiyat
             // 
-            this.textEditUrunSatisFiyat.Location = new System.Drawing.Point(108, 270);
+            this.textEditUrunSatisFiyat.Location = new System.Drawing.Point(108, 252);
             this.textEditUrunSatisFiyat.Name = "textEditUrunSatisFiyat";
             this.textEditUrunSatisFiyat.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunSatisFiyat.Properties.Appearance.Options.UseFont = true;
@@ -156,7 +183,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunSatisFiyat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunSatisFiyat.Appearance.Options.UseFont = true;
-            this.labelUrunSatisFiyat.Location = new System.Drawing.Point(30, 273);
+            this.labelUrunSatisFiyat.Location = new System.Drawing.Point(30, 255);
             this.labelUrunSatisFiyat.Name = "labelUrunSatisFiyat";
             this.labelUrunSatisFiyat.Size = new System.Drawing.Size(72, 17);
             this.labelUrunSatisFiyat.TabIndex = 14;
@@ -164,7 +191,7 @@ namespace CommercialAutomationDevExpress
             // 
             // textEditUrunAlisFiyat
             // 
-            this.textEditUrunAlisFiyat.Location = new System.Drawing.Point(108, 242);
+            this.textEditUrunAlisFiyat.Location = new System.Drawing.Point(108, 224);
             this.textEditUrunAlisFiyat.Name = "textEditUrunAlisFiyat";
             this.textEditUrunAlisFiyat.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunAlisFiyat.Properties.Appearance.Options.UseFont = true;
@@ -175,7 +202,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunAlisFiyat.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunAlisFiyat.Appearance.Options.UseFont = true;
-            this.labelUrunAlisFiyat.Location = new System.Drawing.Point(44, 245);
+            this.labelUrunAlisFiyat.Location = new System.Drawing.Point(44, 227);
             this.labelUrunAlisFiyat.Name = "labelUrunAlisFiyat";
             this.labelUrunAlisFiyat.Size = new System.Drawing.Size(58, 17);
             this.labelUrunAlisFiyat.TabIndex = 12;
@@ -185,7 +212,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunAdet.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunAdet.Appearance.Options.UseFont = true;
-            this.labelUrunAdet.Location = new System.Drawing.Point(65, 216);
+            this.labelUrunAdet.Location = new System.Drawing.Point(65, 198);
             this.labelUrunAdet.Name = "labelUrunAdet";
             this.labelUrunAdet.Size = new System.Drawing.Size(37, 17);
             this.labelUrunAdet.TabIndex = 10;
@@ -193,7 +220,7 @@ namespace CommercialAutomationDevExpress
             // 
             // textEditUrunYil
             // 
-            this.textEditUrunYil.Location = new System.Drawing.Point(108, 186);
+            this.textEditUrunYil.Location = new System.Drawing.Point(108, 168);
             this.textEditUrunYil.Name = "textEditUrunYil";
             this.textEditUrunYil.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunYil.Properties.Appearance.Options.UseFont = true;
@@ -204,7 +231,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunYil.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunYil.Appearance.Options.UseFont = true;
-            this.labelUrunYil.Location = new System.Drawing.Point(75, 188);
+            this.labelUrunYil.Location = new System.Drawing.Point(75, 170);
             this.labelUrunYil.Name = "labelUrunYil";
             this.labelUrunYil.Size = new System.Drawing.Size(21, 17);
             this.labelUrunYil.TabIndex = 8;
@@ -212,7 +239,7 @@ namespace CommercialAutomationDevExpress
             // 
             // textEditUrunModel
             // 
-            this.textEditUrunModel.Location = new System.Drawing.Point(108, 158);
+            this.textEditUrunModel.Location = new System.Drawing.Point(108, 140);
             this.textEditUrunModel.Name = "textEditUrunModel";
             this.textEditUrunModel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunModel.Properties.Appearance.Options.UseFont = true;
@@ -223,7 +250,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunModel.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunModel.Appearance.Options.UseFont = true;
-            this.labelUrunModel.Location = new System.Drawing.Point(56, 160);
+            this.labelUrunModel.Location = new System.Drawing.Point(56, 142);
             this.labelUrunModel.Name = "labelUrunModel";
             this.labelUrunModel.Size = new System.Drawing.Size(40, 17);
             this.labelUrunModel.TabIndex = 6;
@@ -231,7 +258,7 @@ namespace CommercialAutomationDevExpress
             // 
             // textEditUrunMarka
             // 
-            this.textEditUrunMarka.Location = new System.Drawing.Point(108, 130);
+            this.textEditUrunMarka.Location = new System.Drawing.Point(108, 112);
             this.textEditUrunMarka.Name = "textEditUrunMarka";
             this.textEditUrunMarka.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunMarka.Properties.Appearance.Options.UseFont = true;
@@ -242,7 +269,7 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunMarka.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunMarka.Appearance.Options.UseFont = true;
-            this.labelUrunMarka.Location = new System.Drawing.Point(51, 132);
+            this.labelUrunMarka.Location = new System.Drawing.Point(51, 114);
             this.labelUrunMarka.Name = "labelUrunMarka";
             this.labelUrunMarka.Size = new System.Drawing.Size(45, 17);
             this.labelUrunMarka.TabIndex = 4;
@@ -250,7 +277,7 @@ namespace CommercialAutomationDevExpress
             // 
             // textEditUrunAd
             // 
-            this.textEditUrunAd.Location = new System.Drawing.Point(108, 102);
+            this.textEditUrunAd.Location = new System.Drawing.Point(108, 84);
             this.textEditUrunAd.Name = "textEditUrunAd";
             this.textEditUrunAd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunAd.Properties.Appearance.Options.UseFont = true;
@@ -261,16 +288,15 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunAd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunAd.Appearance.Options.UseFont = true;
-            this.labelUrunAd.Location = new System.Drawing.Point(75, 104);
+            this.labelUrunAd.Location = new System.Drawing.Point(75, 86);
             this.labelUrunAd.Name = "labelUrunAd";
             this.labelUrunAd.Size = new System.Drawing.Size(21, 17);
             this.labelUrunAd.TabIndex = 2;
             this.labelUrunAd.Text = "Ad:";
-            this.labelUrunAd.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // textEditUrunID
             // 
-            this.textEditUrunID.Location = new System.Drawing.Point(108, 74);
+            this.textEditUrunID.Location = new System.Drawing.Point(108, 56);
             this.textEditUrunID.Name = "textEditUrunID";
             this.textEditUrunID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.textEditUrunID.Properties.Appearance.Options.UseFont = true;
@@ -281,22 +307,22 @@ namespace CommercialAutomationDevExpress
             // 
             this.labelUrunID.Appearance.Font = new System.Drawing.Font("Tahoma", 8.1F);
             this.labelUrunID.Appearance.Options.UseFont = true;
-            this.labelUrunID.Location = new System.Drawing.Point(75, 77);
+            this.labelUrunID.Location = new System.Drawing.Point(75, 59);
             this.labelUrunID.Name = "labelUrunID";
             this.labelUrunID.Size = new System.Drawing.Size(19, 17);
             this.labelUrunID.TabIndex = 0;
             this.labelUrunID.Text = "ID:";
-            this.labelUrunID.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // frmUrunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 521);
+            this.ClientSize = new System.Drawing.Size(1313, 525);
             this.Controls.Add(this.groupControlUrun);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmUrunler";
-            this.Text = "frmUrunler";
+            this.Text = "Ürünler";
+            this.Load += new System.EventHandler(this.frmUrunler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlUrun)).EndInit();
@@ -319,6 +345,16 @@ namespace CommercialAutomationDevExpress
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControlUrun;
+        private DevExpress.XtraEditors.SimpleButton sbtnUrunSil;
+        private DevExpress.XtraEditors.SimpleButton sbtnUrunGuncelle;
+        private DevExpress.XtraEditors.SimpleButton sbtnUrunKaydet;
+        private System.Windows.Forms.RichTextBox textEditUrunAciklama;
+        private DevExpress.XtraEditors.LabelControl labelUrunAciklama;
+        private System.Windows.Forms.NumericUpDown textEditUrunAdet;
+        private DevExpress.XtraEditors.TextEdit textEditUrunSatisFiyat;
+        private DevExpress.XtraEditors.LabelControl labelUrunSatisFiyat;
+        private DevExpress.XtraEditors.TextEdit textEditUrunAlisFiyat;
+        private DevExpress.XtraEditors.LabelControl labelUrunAlisFiyat;
         private DevExpress.XtraEditors.LabelControl labelUrunAdet;
         private DevExpress.XtraEditors.TextEdit textEditUrunYil;
         private DevExpress.XtraEditors.LabelControl labelUrunYil;
@@ -330,13 +366,5 @@ namespace CommercialAutomationDevExpress
         private DevExpress.XtraEditors.LabelControl labelUrunAd;
         private DevExpress.XtraEditors.TextEdit textEditUrunID;
         private DevExpress.XtraEditors.LabelControl labelUrunID;
-        private DevExpress.XtraEditors.SimpleButton sbtnUrunKaydet;
-        private System.Windows.Forms.RichTextBox textEditUrunAciklama;
-        private DevExpress.XtraEditors.LabelControl labelUrunAciklama;
-        private System.Windows.Forms.NumericUpDown textEditUrunAdet;
-        private DevExpress.XtraEditors.TextEdit textEditUrunSatisFiyat;
-        private DevExpress.XtraEditors.LabelControl labelUrunSatisFiyat;
-        private DevExpress.XtraEditors.TextEdit textEditUrunAlisFiyat;
-        private DevExpress.XtraEditors.LabelControl labelUrunAlisFiyat;
     }
 }

@@ -78,7 +78,7 @@ namespace CommercialAutomationDevExpress
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
-            this.ribbonControl1.Size = new System.Drawing.Size(1119, 171);
+            this.ribbonControl1.Size = new System.Drawing.Size(1162, 171);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnAnasayfa
@@ -285,12 +285,13 @@ namespace CommercialAutomationDevExpress
             // 
             // Form1
             // 
+            this.ActiveGlowColor = System.Drawing.Color.Transparent;
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 565);
+            this.ClientSize = new System.Drawing.Size(1162, 733);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Form1.IconOptions.SvgImage")));
             this.IconOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette;
@@ -298,6 +299,7 @@ namespace CommercialAutomationDevExpress
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Commercial Automation";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
