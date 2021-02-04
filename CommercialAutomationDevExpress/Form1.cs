@@ -87,11 +87,15 @@ namespace CommercialAutomationDevExpress
         {
 
         }
-
+        frmMusteriler fm;
         private void btnMusteriler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show(f.ToString());
-           
+            if(fm==null || fm.IsDisposed)
+            {
+                fm = new frmMusteriler();
+                fm.MdiParent = this;
+                fm.Show();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
