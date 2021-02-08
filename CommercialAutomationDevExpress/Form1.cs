@@ -18,24 +18,35 @@ namespace CommercialAutomationDevExpress
             InitializeComponent();
         }
 
-        public void formShow<T>(T _frm) where T : Form, new()
+        //public void formShow<T>(T _frm) where T : Form, new()
+        //{
+        //        T form = new T();
+        //        _frm = form;
+        //        _frm.MdiParent = this;
+        //        _frm.Show();
+        //}
+        public void showForm(Form _f)
         {
-                T form = new T();
-                _frm = form;
-                _frm.MdiParent = this;
-                _frm.Show();
+           _f.MdiParent = this;
+            _f.Show();
         }
         frmUrunler f;
         private void btnUrunler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (f == null || f.IsDisposed)
-                formShow(f);
+            {
+                f = new frmUrunler();
+                showForm(f);
+            }
         }
         frmMusteriler fm;
         private void btnMusteriler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (fm == null || fm.IsDisposed)
-                formShow(fm);
+            {
+                fm = new frmMusteriler();
+                showForm(fm);
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

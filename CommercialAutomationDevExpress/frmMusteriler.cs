@@ -20,6 +20,15 @@ namespace CommercialAutomationDevExpress
             InitializeComponent();
         }
         DbConnection db = new DbConnection();
+        void listele()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter("Select * From Musteri", db.connect());
+            adapter.Fill(dt);
+            gridControl1.DataSource = dt;
+            gridView1.ClearSelection();
+
+        }
         public bool IsValidEmail(string email)
         {
             string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|" + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
@@ -30,7 +39,7 @@ namespace CommercialAutomationDevExpress
         private void maskedTextBox1_Validating(object sender, CancelEventArgs e)
         {
             
-            if(!IsValidEmail(maskedTextBox1.Text))
+            if(!IsValidEmail(textEditMusteriMail.Text))
             {
                 MessageBox.Show("Geçerli bir email adresi giriniz.","Dikkat",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
@@ -43,15 +52,18 @@ namespace CommercialAutomationDevExpress
 
         private void frmMusteriler_Load(object sender, EventArgs e)
         {
+   
             //iller combobox
             SqlDataAdapter da = new SqlDataAdapter("select sehir from iller", db.connect());
             DataSet ds = new DataSet();
             da.Fill(ds,"sehir");
-            comboBox1.DisplayMember = "sehir";
-            comboBox1.ValueMember = "sehir";
-            comboBox1.DataSource = ds.Tables[0];
-            //ilçeler combobox
-            
+            textEditMusteriIl.DisplayMember = "sehir";
+            textEditMusteriIl.ValueMember = "sehir";
+            textEditMusteriIl.DataSource = ds.Tables[0];
+
+
+
+            listele();
 
         }
 
@@ -62,12 +74,28 @@ namespace CommercialAutomationDevExpress
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter($"select ilce as i from ilceler inner join iller on ilceler.sehir=iller.id where iller.sehir like '{comboBox1.Text}' ", db.connect());
+            SqlDataAdapter dataAdapter = new SqlDataAdapter($"select ilce as i from ilceler inner join iller on ilceler.sehir=iller.id where iller.sehir like '{textEditMusteriIl.Text}' ", db.connect());
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet,"i");
-            comboBox2.DisplayMember = "i";
-            comboBox2.ValueMember = "i";
-            comboBox2.DataSource = dataSet.Tables[0];
+            textEditMusteriIlce.DisplayMember = "i";
+            textEditMusteriIlce.ValueMember = "i";
+            textEditMusteriIlce.DataSource = dataSet.Tables[0];
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dr = gridView1.GetFocusedDataRow();
+            //textEditUrunID.ReadOnly = true;
+            textEditMusteriTC.Text = dr["MusteriTC"].ToString();
+            textEditMusteriAd.Text = dr["MusteriAd"].ToString();
+            textEditMusteriSoyad.Text = dr["MusteriSoyad"].ToString();
+            textEditMusteriTelNo.Text = dr["MusteriTelNo"].ToString();
+            textEditMusteriMail.Text = dr["MusteriMail"].ToString();
+            textEditMusteriVergiDairesi.Text = dr["MusteriVergiDairesi"].ToString();
+            textEditMusteriIl.Text = dr["MusteriIl"].ToString();
+            textEditMusteriIlce.Text= dr["MusteriIlce"].ToString();
+            textEditMusteriAdres.Text = dr["MusteriAcikAdres"].ToString();
+
         }
     }
 }
